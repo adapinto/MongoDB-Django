@@ -87,11 +87,19 @@ WSGI_APPLICATION = 'DjangoRestApiMongoDB.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'bezkoder_db',
-        'HOST': '127.0.0.1',
+        'NAME': 'ejercicio-practica',
+        'HOST': 'localhost',
         'PORT': 27017,
+        'AUTH_SOURCE': 'admin',
+        'USERNAME': 'Adimari',
+        'PASSWORD': '99725478Adimari',
+        'ENFORCE_SCHEMA': False,
+        'OPTIONS': {
+            'authMechanism': 'SCRAM-SHA-1'
+        }
     }
 }
+
 
 
 # Password validation
