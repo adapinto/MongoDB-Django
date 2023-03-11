@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import ssl
 
 from pathlib import Path
 
@@ -87,18 +88,21 @@ WSGI_APPLICATION = 'DjangoRestApiMongoDB.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'ejercicio-practica',
-        'HOST': 'localhost',
+        'NAME': 'Django_db',
+        'HOST': 'poounahclase3.mongodb.net',
         'PORT': 27017,
         'AUTH_SOURCE': 'admin',
         'USERNAME': 'Adimari',
         'PASSWORD': '99725478Adimari',
         'ENFORCE_SCHEMA': False,
         'OPTIONS': {
-            'authMechanism': 'SCRAM-SHA-1'
+            'ssl': True,
+            'ssl_cert_reqs': ssl.CERT_NONE,
+            'retryWrites': True,
         }
     }
 }
+
 
 
 
